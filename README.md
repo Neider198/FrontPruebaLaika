@@ -10,7 +10,7 @@
   Se crearon en el Front
   <br>
   <br>
- La parte del backend(API) se encuentra en el siguiente este repositorio: https://github.com/Neider198/PruebaTecnicaLaika.git
+ La parte del backend(API) se encuentra en el siguiente repositorio: https://github.com/Neider198/PruebaTecnicaLaika.git
 </h4>
   
 <p>Espero cumplir con lo nesesario y poder formar parte de LAIKA y de esa manera seguir desarrolandome y aprediendo</p>  
