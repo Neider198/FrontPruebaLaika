@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <title>FrontPruebaLaika</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand"  href="#">Front Prueba Laika</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="listar.html">Estudiantes</a>
+              <a class="nav-link" href="../cursos/listar.html" >Cursos</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="container" style="padding-top: 15px;">
+        <div class="row">
+          <button onclick="ObtenerCursos(1)" style="width: 150px;margin-bottom: 10px;"  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalAgregar">
+              Agregar
+            </button>
+          <table class="table table-striped table-hover table-bordered">
+              <thead class="table-dark">
+                <tr>
+                  <td>Identificacion</td>
+                  <td >Nombre Completo  </td>
+                  <td>Telefono</td>
+                  <td>Direccion</td>
+                  <td>Correo</td>
+                  <td>Curso</td>
+                  <td>Editar</td>
+                  <td>Eliminar</td>
+                </tr>
+              </thead>
+              <tbody id="respuesta">
+                
+              </tbody>
+          </table>
+      </div>
+      </div>
+
+      <!-- Modal GUARDAR-->
+      <div class="modal fade" id="ModalAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+            <div class="modal-body">
+
+                <div style="padding-bottom: 5px;" class="row g-3">
+                 <div class="col-12">
+                   <label for="identificacion" class="form-label">Identificacion</label>
+                   <input type="number"  class="form-control" id="identificacion" placeholder="Identificacion" required>
+                  </div>
+                </div>
+                <div style="padding-bottom: 5px;" class="row g-3">
+                  <div class="col-6">
+                    <label for="primer_nombre" class="form-label">Primer Nombre</label>
+                    <input type="text" class="form-control" id="primer_nombre" placeholder="Primer Nombre" required>
+                  </div>
+                  <div class="col-6">
+                    <label for="segundo_nombre" class="form-label">Segundo Apellido</label>
+                    <input type="text" class="form-control" id="segundo_nombre" placeholder="Segundo Apellido" required>
+                  </div>
+                </div>
+
+                <div style="padding-bottom: 5px;" class="row g-3">
+                  <div class="col-6">
+                    <label for="primer_apellido" class="form-label">Primer Apellido</label>
+                    <input type="text" class="form-control" id="primer_apellido" placeholder="Primer Apellido" required>
+                  </div>
+                  <div class="col-6">
+                    <label for="segundo_apellido" class="form-label">Segundo Apellido</label>
+                    <input type="text" class="form-control" id="segundo_apellido" placeholder="Segundo Apellido" required>
+                  </div>
+                </div>
+
+                <div style="padding-bottom: 5px;" class="row g-3">
+                  <div class="col-6">
+                    <label for="telefono" class="form-label">Telefono</label>
+                    <input type="number" class="form-control" id="telefono" placeholder="Telefono" required>
+                  </div>
+                  <div class="col-6">
+                    <label for="curso" class="form-label">Cursos</label>
+                    <select id="selectCursos"  class="form-select" aria-label="Default select example">
+
+                    </select>
+                  </div>
+                </div>
+
+                <div style="padding-bottom: 5px;" class="row g-3">
+                  <div class="col-12">
+                    <label for="correo" class="form-label">Correo</label>
+                    <input type="text" class="form-control" id="correo" placeholder="Correo" required>
+                  </div>
+                </div>
+
+                <div  class="row g-3">
+                <div class="col-12">
+                  <label for="direccion" class="form-label">Direccion</label>
+                  <input type="text" class="form-control" id="direccion" placeholder="Direccion" required>
+                </div>
+              </div>
+            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="guardarEstudiante">Guardar</button>
+              </form> 
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <!-- Modal ACTUALIZAR -->
+      <div class="modal fade" id="ModalActualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Actualizar</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="modaLlenar" class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="editarEstudiante" >Actualizar</button>
+            </div>
+          </div>
+        </div>
+      </div>     
+
+</body>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      
+      cargarEstudiantes();
+      // $('#tabla').load('tabla.html');
+
+      $('#guardarEstudiante').click(function (e) { 
+        id = $("#identificacion").val();
+        primer_nombre = $("#primer_nombre").val();
+        segundo_nombre = $("#segundo_nombre").val();
+        primer_apellido = $("#primer_apellido").val();
+        segundo_apellido = $("#segundo_apellido").val();
+        telefono = $("#telefono").val();
+        direccion = $("#direccion").val();
+        correo = $("#correo").val();
+        curso = $("#selectCursos").val();
+        agregarEstudiante(id,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,telefono,direccion,correo,curso)
+      });
+
+      $('#editarEstudiante').click(function (e) { 
+        id = $("#actualizaridentificacion").val();
+        actualizarprimer_nombre = $("#actualizarprimer_nombre").val();
+        actualizarsegundo_nombre = $("#actualizarsegundo_nombre").val();
+        actualizarprimer_apellido = $("#actualizarprimer_apellido").val();
+        actualizarsegundo_apellido = $("#actualizarsegundo_apellido").val();
+        actualizartelefono = $("#actualizartelefono").val();
+        actualizardireccion = $("#actualizardireccion").val();
+        actualizarcorreo = $("#actualizarcorreo").val();
+        actualizarcurso = $("#actualizarselectCursos").val();
+       
+        actualizarCurso(id,actualizarprimer_nombre, actualizarsegundo_nombre,actualizarprimer_apellido, actualizarsegundo_apellido,actualizartelefono, actualizardireccion,actualizarcorreo, actualizarcurso)
+      });
+
+      $('#eliminarEstudiante').click(function (e) { 
+        id = $("#identificacion").val();
+        EliminarEstudiante(id)
+      });
+        
+    });
+  </script>
+  <script src="../js/funcionesEstudiantes.js"></script>
+  <script src="../js/validacionesEstudiantes.js"></script>
+</html>
