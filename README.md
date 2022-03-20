@@ -8,9 +8,10 @@
   Se  consumen los EndPoints  a través de un Front 
   <br>
   Se crearon en el Front
-  <br>
-  <br>
- La parte del backend(API) se encuentra en el siguiente repositorio: https://github.com/Neider198/PruebaTecnicaLaika.git
+  <br><br>
+  Link donde del servidor donde encuentra alojado el FRONTEND:  https://kind-dijkstra-3e9fa6.netlify.app/
+  <br><br>
+  La parte del backend(API) se encuentra en el siguiente repositorio: https://github.com/Neider198/PruebaTecnicaLaika.git
 </h4>
   
 <p>Espero cumplir con lo nesesario y poder formar parte de LAIKA y de esa manera seguir desarrolandome y aprediendo</p>  
