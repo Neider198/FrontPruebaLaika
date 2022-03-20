@@ -9,7 +9,7 @@
   <br>
   Se crearon en el Front
   <br><br>
-  Link donde del servidor donde encuentra alojado el FRONTEND:  https://kind-dijkstra-3e9fa6.netlify.app/
+  Link donde se encuentra alojado el FRONTEND:  https://kind-dijkstra-3e9fa6.netlify.app/
   <br><br>
   La parte del backend(API) se encuentra en el siguiente repositorio: https://github.com/Neider198/PruebaTecnicaLaika.git
 </h4>
